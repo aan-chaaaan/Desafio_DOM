@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <h2>
+                Resultado: <span class="resultado"></span>
+            </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="">Valor 1</label>
+                        <input id="valor1" type="text">
+                    </div>
+                    <div>
+                        <label for="">Valor 2</label>
+                        <input id="valor2" type="text">
+                    </div>
+                    <div style="display: flex">
+                        <button id="btn-sumar" type="button">
+                            Sumar
+                        </button>
+                        <button id="btn-restar" type="button">
+                            Restar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        "use strict"
+        //funcion sumar
+
+        let btnSuma = document.getElementById("btn-sumar");
+        btnSuma.addEventListener("click", function () {
+            let valor1 = document.getElementById("valor1").value
+            let valor2 = document.getElementById("valor2").value
+            let resultado = Number.parseInt(valor1) + Number.parseInt(valor2)
+            document.querySelector(".resultado").innerHTML = resultado;
+        })
+        //funcion restar
+        let btnResta = document.getElementById("btn-restar");
+        btnResta.addEventListener("click", function () {
+            let valor1 = document.getElementById("valor1").value
+            let valor2 = document.getElementById("valor2").value
+            let resultado = Number.parseInt(valor1) - Number.parseInt(valor2)
+            document.querySelector(".resultado").innerHTML = resultado;
+
+            if (resultado < 1) {
+                document.querySelector(".resultado").innerHTML = 0;
+            }
+        })
+    </script>
+</body>
+
+</html>
